@@ -8,40 +8,47 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  var parentContext;
+
   @override
   Widget build(BuildContext context) {
+    parentContext = context;
     return Scaffold(
       appBar: AppBar(
         title: Text("Home"),
       ),
-      body: Container(
+      backgroundColor: Color(0xFFe5e2e5),
+      body: SingleChildScrollView(
+        child: Container(
         padding: EdgeInsets.all(20),
         child: Column(
-        children: <Widget>[
-          buildImage(),
-          buildInfo(),
-        ],
+          children: <Widget>[
+            buildImage(),
+            buildInfo(),
+          ],
+        ),
       ),
-      ),
+      )
     );
   }
 
   Widget buildImage() {
     return Center(
-      child: CircleAvatar(backgroundImage: AssetImage("assets/images/my_photo.JPG"), radius: 100.0)     
+      child: CircleAvatar(backgroundImage: AssetImage("assets/images/my_photo.JPG"), radius: 90.0)     
     );
   }
 
   Widget buildInfo() {
     return Card(
-      margin: EdgeInsets.only(top: 30),
+      margin: EdgeInsets.only(top: 20),
       child: Column(
         children: <Widget>[
           ListTile(
-            contentPadding: EdgeInsets.all(20),
-            title: Text('Sthefanny Gonzaga', textAlign: TextAlign.center, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+            contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            title: Text('Sthefanny Gonzaga', textAlign: TextAlign.center, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             subtitle: Column(
               children: <Widget>[
+                buildSummary(),
                 buildLine('Address', 'Curitiba - Paraná - Brazil'),
                 buildLine('Phone', '+55 21 99492-1101'),
                 buildLine('E-mail', 'sthefannygonzaga@gmail.com'),
@@ -59,7 +66,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget buildLine(String title, String text) {
     return Container(
-      margin: EdgeInsets.only(top: 20),
+      margin: EdgeInsets.only(top: 10),
       child: Row(
         children: <Widget>[
           Text('$title: ', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
@@ -70,7 +77,7 @@ class _HomePageState extends State<HomePage> {
   
   Widget buildLink(String title, String text) {
     return Container(
-      margin: EdgeInsets.only(top: 20),
+      margin: EdgeInsets.only(top: 10),
       child: InkWell(
         child: Row(children: <Widget>[
                   Text('$title: ', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
@@ -90,5 +97,22 @@ class _HomePageState extends State<HomePage> {
     } else {
       throw 'Could not launch $url';
     }
+  }
+
+  Widget buildSummary() {
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 10),
+      child: RichText(
+        text: TextSpan(
+          style: DefaultTextStyle.of(parentContext).style,
+          children: <TextSpan>[
+            TextSpan(
+              text: 'I am a full stack developer with knowledge in some front end and back end languages, responsive frameworks and best code practices. I am dedicated to perfecting my craft by learning from more seasoned developers, and continuously making strides to learn all that I can about development.',
+              style: TextStyle(fontSize: 14, fontFamily: 'Roboto', color: Colors.grey[600], height: 1.2),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
