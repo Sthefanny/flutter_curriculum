@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_curriculum/src/home/home_module.dart';
+
+import 'common/models/pageRoutes.dart';
+import 'pages/nav_bottom/nav_bottom_page.dart';
 
 class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Slidy',
+      title: 'Sthefanny Gonzaga',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Color(0xFF391e39),
       ),
-      home: HomeModule(),
+      home: NavBottomPage(),
     );
   }
 }
