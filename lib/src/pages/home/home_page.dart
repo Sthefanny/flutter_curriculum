@@ -1,5 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_curriculum/src/common/widgets/drawer.dart';
+import 'package:flutter_curriculum/src/configs/colorsConfig.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
@@ -9,16 +13,51 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   var parentContext;
-
+  var imageSize;
+  final _colors = ColorsConfig();
+  
   @override
   Widget build(BuildContext context) {
     parentContext = context;
+    return Platform.isIOS ? iOSScaffold() : androidScaffold();
+  }
+
+  Widget iOSScaffold() {
+    imageSize = 90.0;
+    return CupertinoTabScaffold(
+      tabBar: CupertinoTabBar(
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.home)
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.person_solid)
+          ),
+        ],
+      ),
+      tabBuilder: (context, index) {
+        switch (index) {
+          case 1:
+          default:
+            return buildContent();
+        }
+      },
+    );
+  }
+
+  Widget androidScaffold() {
+    imageSize = 100.0;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home"),
-      ),
-      backgroundColor: Color(0xFFe5e2e5),
-      body: SingleChildScrollView(
+        title: Text("Home"),),
+      body: buildContent(),
+      drawer: DrawerDefault(),
+      backgroundColor: _colors.background,
+    );
+  }
+
+  Widget buildContent() {
+    return SingleChildScrollView(
         child: Container(
         padding: EdgeInsets.all(20),
         child: Column(
@@ -28,13 +67,12 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      )
-    );
+      );
   }
 
   Widget buildImage() {
     return Center(
-      child: CircleAvatar(backgroundImage: AssetImage("assets/images/my_photo.JPG"), radius: 90.0)     
+      child: CircleAvatar(backgroundImage: AssetImage("assets/images/my_photo.JPG"), radius: imageSize)     
     );
   }
 
@@ -108,7 +146,7 @@ class _HomePageState extends State<HomePage> {
           children: <TextSpan>[
             TextSpan(
               text: 'I am a full stack developer with knowledge in some front end and back end languages, responsive frameworks and best code practices. I am dedicated to perfecting my craft by learning from more seasoned developers, and continuously making strides to learn all that I can about development.',
-              style: TextStyle(fontSize: 14, fontFamily: 'Roboto', color: Colors.grey[600], height: 1.2),
+              style: TextStyle(fontSize: 14, fontFamily: 'Roboto', color: _colors.text, height: 1.2),
             ),
           ],
         ),

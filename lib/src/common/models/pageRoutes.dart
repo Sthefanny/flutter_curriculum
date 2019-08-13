@@ -8,9 +8,9 @@ class PageRoutes {
   static const String latestExperiencesRoute = '/lastestExperiences';
   static const String navBottomRoute = '/bottomNav';
 
-  Route routes(RouteSettings settings) {
+  static Route routes(RouteSettings settings) {
+    Map<String, dynamic> argumentsMap = settings.arguments is Map<String, dynamic> ? settings.arguments : Map();
     switch (settings.name) {
-      case '/':
       case PageRoutes.navBottomRoute:
         return MaterialPageRoute(builder: (_) => NavBottomPage());
       case PageRoutes.latestExperiencesRoute:
