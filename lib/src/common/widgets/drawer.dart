@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_curriculum/src/common/models/pageRoutes.dart';
 import 'package:flutter_curriculum/src/configs/colorsConfig.dart';
 
 class DrawerDefault extends StatelessWidget {
@@ -25,13 +26,58 @@ class DrawerDefault extends StatelessWidget {
             ),
           ),
           ListTile(
-            title: Text('Item 1'),
+            title: Row(
+              children: <Widget>[
+                Container(margin: EdgeInsets.only(right: 10), child: Icon(Icons.wifi_tethering)),
+                Text('Summary'),
+              ],
+            ),
             onTap: () {
+              Navigator.of(context).pushNamed(PageRoutes.homeRoute);
             },
           ),
           ListTile(
-            title: Text('Item 2'),
+            title: Row(
+              children: <Widget>[
+                Container(margin: EdgeInsets.only(right: 10), child: Icon(Icons.business_center)),
+                Text('Latest Experiences'),
+              ],
+            ),
             onTap: () {
+              Navigator.of(context).pushNamed(PageRoutes.latestExperiencesRoute);
+            },
+          ),
+          ListTile(
+            title: Row(
+              children: <Widget>[
+                Container(margin: EdgeInsets.only(right: 10), child: Icon(Icons.gamepad)),
+                Text('Skills'),
+              ],
+            ),
+            onTap: () {
+              Navigator.of(context).pushNamed(PageRoutes.skillsRoute);
+            },
+          ),
+          ListTile(
+            title: Row(
+              children: <Widget>[
+                Container(margin: EdgeInsets.only(right: 10), child: Icon(Icons.school)),
+                Text('Education'),
+              ],
+            ),
+            onTap: () {
+              Navigator.of(context).pushNamed(PageRoutes.educationRoute);
+            },
+          ),
+          ListTile(
+            title: Row(
+              children: <Widget>[
+                Container(margin: EdgeInsets.only(right: 10), child: Icon(Icons.flag)),
+                Text('Languages'),
+              ],
+            ),
+            onTap: () {
+              Navigator.of(context).pushNamed(PageRoutes.languagesRoute);
             },
           ),
         ],
