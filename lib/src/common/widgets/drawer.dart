@@ -33,7 +33,7 @@ class DrawerDefault extends StatelessWidget {
               ],
             ),
             onTap: () {
-              Navigator.of(context).pushNamed(PageRoutes.homeRoute);
+              Navigator.of(context, rootNavigator: true).pushReplacementNamed(PageRoutes.homeRoute);
             },
           ),
           ListTile(
@@ -44,7 +44,7 @@ class DrawerDefault extends StatelessWidget {
               ],
             ),
             onTap: () {
-              Navigator.of(context).pushNamed(PageRoutes.latestExperiencesRoute);
+              Navigator.of(context, rootNavigator: true).pushReplacementNamed(PageRoutes.latestExperiencesRoute);
             },
           ),
           ListTile(
@@ -55,7 +55,7 @@ class DrawerDefault extends StatelessWidget {
               ],
             ),
             onTap: () {
-              Navigator.of(context).pushNamed(PageRoutes.skillsRoute);
+              Navigator.of(context, rootNavigator: true).pushReplacementNamed(PageRoutes.skillsRoute);
             },
           ),
           ListTile(
@@ -66,7 +66,7 @@ class DrawerDefault extends StatelessWidget {
               ],
             ),
             onTap: () {
-              Navigator.of(context).pushNamed(PageRoutes.educationRoute);
+              Navigator.of(context, rootNavigator: true).pushReplacementNamed(PageRoutes.educationRoute);
             },
           ),
           ListTile(
@@ -77,7 +77,7 @@ class DrawerDefault extends StatelessWidget {
               ],
             ),
             onTap: () {
-              Navigator.of(context).pushNamed(PageRoutes.languagesRoute);
+              Navigator.of(context, rootNavigator: true).pushReplacementNamed(PageRoutes.languagesRoute);
             },
           ),
         ],

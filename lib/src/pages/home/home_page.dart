@@ -86,7 +86,7 @@ class _HomePageState extends State<HomePage> {
       child: InkWell(
         child: Row(children: <Widget>[
                   Text('$title: ', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-                  Text(text, style: TextStyle(fontSize: 14)),
+                  Text(text, style: TextStyle(fontSize: 14, decoration: TextDecoration.underline)),
                 ]),
                 onTap: () {
                   _launchURL(text);
