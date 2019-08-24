@@ -80,7 +80,7 @@ class DrawerDefault {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Padding(padding: EdgeInsets.only(right: 20), child: Container(margin: EdgeInsets.only(right: 10), child: Icon(icon, color: colors.background))),
+          Padding(padding: EdgeInsets.only(right: 20), child: Container(margin: EdgeInsets.only(right: 10), child: Icon(icon, color: colors.primary))),
           Text(title),
         ],
       ),

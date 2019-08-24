@@ -19,7 +19,7 @@ class _LatestExperiencesPageState extends State<LatestExperiencesPage> {
         margin: EdgeInsets.all(10),
         child: ListView(
           children: <Widget>[
-            buildCard('Full Stack / Flutter Developer', 'Fev/19 - Present', 'CINQ Technologies - Client: Sita (Ireland)',
+            buildCard('Full Stack / Flutter Developer', 'Fev/19 - Present', 'CEABS Serviços',
                 'Development of an airport management system using: .NET, C#, Web Api, Git, CI/CD, AngularJS (version 1.3 and 1.5), Javascript, HTML5, CSS.'),
             buildCard('Full Stack Developer', 'Mar/17 - Fev/19', 'CINQ Technologies - Client: Sita (Ireland)',
                 'Development of an airport management system using: .NET, C#, Web Api, Git, CI/CD, AngularJS (version 1.3 and 1.5), Javascript, HTML5, CSS.'),
@@ -48,10 +48,15 @@ class _LatestExperiencesPageState extends State<LatestExperiencesPage> {
                   title,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 17.0,
+                    fontSize: 16.0,
                   ),
                 ),
-                Text(date),
+                Text(
+                  date,
+                  style: TextStyle(
+                    fontSize: 11.0,
+                  ),
+                ),
               ],
             ),
             Padding(

@@ -27,14 +27,17 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget buildBody() {
-    return SingleChildScrollView(
-      child: Container(
-        padding: EdgeInsets.all(20),
-        child: Column(
-          children: <Widget>[
-            buildImage(),
-            buildInfo(),
-          ],
+    return Container(
+      margin: Platform.isIOS ? EdgeInsets.only(bottom: 50) : null,
+      child: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.symmetric(vertical: 20, horizontal: 15),
+          child: Column(
+            children: <Widget>[
+              buildImage(),
+              buildInfo(),
+            ],
+          ),
         ),
       ),
     );
@@ -56,12 +59,11 @@ class _HomePageState extends State<HomePage> {
               children: <Widget>[
                 buildSummary(),
                 buildLine('Address', 'Curitiba - Paraná - Brazil'),
-                buildLine('Phone', '+55 21 99492-1101'),
-                buildLine('E-mail', 'sthefannygonzaga@gmail.com'),
+                buildPhone('Phone', '+55 21 99492-1101'),
+                buildMailto('E-mail', 'sthefannygonzaga@gmail.com'),
                 buildLine('Skype', 'sthefannygonzaga'),
                 buildLink('LinkedIn', 'linkedin.com/in/sthefannygonzaga/'),
                 buildLink('Github', 'github.com/Sthefanny'),
-                // buildLine('Summary', 'I am a full stack developer with knowledge in some front end and back end languages, responsive frameworks and best code practices. I am dedicated to perfecting my craft by learning from more seasoned developers, and continuously making strides to learn all that I can about development.'),
               ],
             ),
           ),
@@ -77,6 +79,36 @@ class _HomePageState extends State<HomePage> {
         Text('$title: ', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
         Text(text, style: TextStyle(fontSize: 14)),
       ]),
+    );
+  }
+
+  Widget buildPhone(String title, String text) {
+    return Container(
+      margin: EdgeInsets.only(top: 10),
+      child: InkWell(
+        child: Row(children: <Widget>[
+          Text('$title: ', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+          Text(text, style: TextStyle(fontSize: 14, decoration: TextDecoration.underline)),
+        ]),
+        onTap: () {
+          launch('tel:${text.replaceAll(' ', '')}');
+        },
+      ),
+    );
+  }
+
+  Widget buildMailto(String title, String text) {
+    return Container(
+      margin: EdgeInsets.only(top: 10),
+      child: InkWell(
+        child: Row(children: <Widget>[
+          Text('$title: ', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+          Text(text, style: TextStyle(fontSize: 14, decoration: TextDecoration.underline)),
+        ]),
+        onTap: () {
+          launch('mailto:$text');
+        },
+      ),
     );
   }
 
