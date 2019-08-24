@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_curriculum/src/common/widgets/platformScaffold.dart';
+import 'package:flutter_curriculum/src/common/widgets/build_platform_scaffold.dart';
 
 class EducationPage extends StatefulWidget {
   @override
@@ -9,7 +9,7 @@ class EducationPage extends StatefulWidget {
 class _EducationPageState extends State<EducationPage> {
   @override
   Widget build(BuildContext context) {
-    return PlatformScaffold(icon: Icons.school, title: 'Education', child: buildBody());
+    return BuildPlatformScaffold(title: 'Education', child: buildBody());
   }
 
   Widget buildBody() {
@@ -34,12 +34,12 @@ class _EducationPageState extends State<EducationPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
-                  title,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 17.0,
-                  ),
-                ),
+              title,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 17.0,
+              ),
+            ),
             Padding(
               padding: EdgeInsets.only(top: 5, bottom: 15),
               child: Text(

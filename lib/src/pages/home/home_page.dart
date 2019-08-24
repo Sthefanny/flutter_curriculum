@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_curriculum/src/common/widgets/platformScaffold.dart';
+import 'package:flutter_curriculum/src/common/widgets/build_platform_scaffold.dart';
 import 'package:flutter_curriculum/src/configs/colorsConfig.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -15,17 +15,20 @@ class _HomePageState extends State<HomePage> {
   var parentContext;
   var imageSize;
   final _colors = ColorsConfig();
-  
+
   @override
   Widget build(BuildContext context) {
     parentContext = context;
     imageSize = Platform.isIOS ? 90.0 : 100.0;
-    return PlatformScaffold(icon: Icons.wifi_tethering, title: 'Summary', child: buildBody());
+    return BuildPlatformScaffold(
+      title: 'Summary',
+      child: buildBody(),
+    );
   }
 
   Widget buildBody() {
     return SingleChildScrollView(
-        child: Container(
+      child: Container(
         padding: EdgeInsets.all(20),
         child: Column(
           children: <Widget>[
@@ -34,13 +37,11 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      );
+    );
   }
 
   Widget buildImage() {
-    return Center(
-      child: CircleAvatar(backgroundImage: AssetImage("assets/images/my_photo.JPG"), radius: imageSize)     
-    );
+    return Center(child: CircleAvatar(backgroundImage: AssetImage("assets/images/my_photo.JPG"), radius: imageSize));
   }
 
   Widget buildInfo() {
@@ -72,25 +73,24 @@ class _HomePageState extends State<HomePage> {
   Widget buildLine(String title, String text) {
     return Container(
       margin: EdgeInsets.only(top: 10),
-      child: Row(
-        children: <Widget>[
-          Text('$title: ', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-          Text(text, style: TextStyle(fontSize: 14)),
-        ]),
+      child: Row(children: <Widget>[
+        Text('$title: ', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+        Text(text, style: TextStyle(fontSize: 14)),
+      ]),
     );
   }
-  
+
   Widget buildLink(String title, String text) {
     return Container(
       margin: EdgeInsets.only(top: 10),
       child: InkWell(
         child: Row(children: <Widget>[
-                  Text('$title: ', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-                  Text(text, style: TextStyle(fontSize: 14, decoration: TextDecoration.underline)),
-                ]),
-                onTap: () {
-                  _launchURL(text);
-                },
+          Text('$title: ', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+          Text(text, style: TextStyle(fontSize: 14, decoration: TextDecoration.underline)),
+        ]),
+        onTap: () {
+          _launchURL(text);
+        },
       ),
     );
   }
@@ -112,7 +112,8 @@ class _HomePageState extends State<HomePage> {
           style: TextStyle(fontSize: 14, color: _colors.text, height: 1.2, fontFamily: 'Roboto', fontStyle: FontStyle.normal),
           children: <TextSpan>[
             TextSpan(
-              text: 'I am a full stack developer with knowledge in some front end and back end languages, responsive frameworks and best code practices. I am dedicated to perfecting my craft by learning from more seasoned developers, and continuously making strides to learn all that I can about development.',
+              text:
+                  'I am a full stack developer with knowledge in some front end and back end languages, responsive frameworks and best code practices. I am dedicated to perfecting my craft by learning from more seasoned developers, and continuously making strides to learn all that I can about development.',
             ),
           ],
         ),

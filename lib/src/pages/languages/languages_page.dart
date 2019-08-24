@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_curriculum/src/common/widgets/platformScaffold.dart';
+import 'package:flutter_curriculum/src/common/widgets/build_platform_scaffold.dart';
 import 'package:flutter_curriculum/src/common/widgets/rating.dart';
 
 class LanguagesPage extends StatefulWidget {
@@ -10,7 +10,7 @@ class LanguagesPage extends StatefulWidget {
 class _LanguagesPageState extends State<LanguagesPage> {
   @override
   Widget build(BuildContext context) {
-    return PlatformScaffold(icon: Icons.flag, title: 'Languages', child: buildBody());
+    return BuildPlatformScaffold(title: 'Languages', child: buildBody());
   }
 
   Widget buildBody() {
@@ -34,10 +34,7 @@ class _LanguagesPageState extends State<LanguagesPage> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text(language, style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
-            Rating(rating: rate)
-          ],
+          children: <Widget>[Text(language, style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)), Rating(rating: rate)],
         ),
       ),
     );

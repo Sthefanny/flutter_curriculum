@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_curriculum/src/common/widgets/platformScaffold.dart';
+import 'package:flutter_curriculum/src/common/widgets/build_platform_scaffold.dart';
 import 'package:flutter_curriculum/src/common/widgets/rating.dart';
 
 class SkillsPage extends StatefulWidget {
@@ -10,7 +10,7 @@ class SkillsPage extends StatefulWidget {
 class _SkillsPageState extends State<SkillsPage> {
   @override
   Widget build(BuildContext context) {
-    return PlatformScaffold(icon: Icons.gamepad, title: 'Skills', child: buildBody());
+    return BuildPlatformScaffold(title: 'Skills', child: buildBody());
   }
 
   Widget buildBody() {
@@ -44,10 +44,7 @@ class _SkillsPageState extends State<SkillsPage> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text(skill, style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
-            Rating(rating: rate)
-          ],
+          children: <Widget>[Text(skill, style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)), Rating(rating: rate)],
         ),
       ),
     );

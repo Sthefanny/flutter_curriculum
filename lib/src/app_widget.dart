@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'common/models/pageRoutes.dart';
 import 'configs/colorsConfig.dart';
-import 'pages/nav_bottom/nav_bottom_page.dart';
 
 class AppWidget extends StatelessWidget {
   final _colors = ColorsConfig();
@@ -14,8 +13,7 @@ class AppWidget extends StatelessWidget {
       theme: ThemeData(
         primaryColor: _colors.primary,
       ),
-      home: NavBottomPage(),
-      initialRoute: PageRoutes.navBottomRoute,
+      initialRoute: PageRoutes.bottomNavbarRoute,
       onGenerateRoute: PageRoutes.routes,
     );
   }

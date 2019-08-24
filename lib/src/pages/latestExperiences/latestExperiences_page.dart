@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_curriculum/src/common/widgets/platformScaffold.dart';
+import 'package:flutter_curriculum/src/common/widgets/build_platform_scaffold.dart';
 
 class LatestExperiencesPage extends StatefulWidget {
   @override
@@ -10,7 +10,7 @@ class LatestExperiencesPage extends StatefulWidget {
 class _LatestExperiencesPageState extends State<LatestExperiencesPage> {
   @override
   Widget build(BuildContext context) {
-    return PlatformScaffold(icon: Icons.business_center, title: 'Latest Experiences', child: buildBody());
+    return BuildPlatformScaffold(title: 'Latest Experiences', child: buildBody());
   }
 
   Widget buildBody() {
@@ -19,11 +19,15 @@ class _LatestExperiencesPageState extends State<LatestExperiencesPage> {
         margin: EdgeInsets.all(10),
         child: ListView(
           children: <Widget>[
-            buildCard('Full Stack / Flutter Developer', 'Fev/19 - Present', 'CINQ Technologies - Client: Sita (Ireland)', 'Development of an airport management system using: .NET, C#, Web Api, Git, CI/CD, AngularJS (version 1.3 and 1.5), Javascript, HTML5, CSS.'),
-            buildCard('Full Stack Developer', 'Mar/17 - Fev/19', 'CINQ Technologies - Client: Sita (Ireland)', 'Development of an airport management system using: .NET, C#, Web Api, Git, CI/CD, AngularJS (version 1.3 and 1.5), Javascript, HTML5, CSS.'),
-            buildCard('Full Stack Developer', 'Nov/16 - Mar/17', 'CINQ Technologies - Client: Fibra', 'A 4-month project to build the new architecture for an existing application. The application itself was built using: SOA Concepts, Entity Server, Web API, .Net Entity Framework, AngularJS, jQuery, Bootstrap, Git'),
+            buildCard('Full Stack / Flutter Developer', 'Fev/19 - Present', 'CINQ Technologies - Client: Sita (Ireland)',
+                'Development of an airport management system using: .NET, C#, Web Api, Git, CI/CD, AngularJS (version 1.3 and 1.5), Javascript, HTML5, CSS.'),
+            buildCard('Full Stack Developer', 'Mar/17 - Fev/19', 'CINQ Technologies - Client: Sita (Ireland)',
+                'Development of an airport management system using: .NET, C#, Web Api, Git, CI/CD, AngularJS (version 1.3 and 1.5), Javascript, HTML5, CSS.'),
+            buildCard('Full Stack Developer', 'Nov/16 - Mar/17', 'CINQ Technologies - Client: Fibra',
+                'A 4-month project to build the new architecture for an existing application. The application itself was built using: SOA Concepts, Entity Server, Web API, .Net Entity Framework, AngularJS, jQuery, Bootstrap, Git'),
             buildCard('CRM Developer', 'Aug/15 - Jun/16', 'Sofhar', 'This role involved working with Microsoft Dynamics CRM developing specific customizations to each company.'),
-            buildCard('Full Stack Developer', 'Nov/13 - Jun/15', 'Working Minds', 'I worked in a service-based project to integrate Nokia\'s and Tim\'s Workflow, using: C#, NHibernate, .Net Framework, Polly, Nancy, StructureMap for IoC/DI, SQL Server, Quartz.Net for scheduled tasks and Git.'),
+            buildCard('Full Stack Developer', 'Nov/13 - Jun/15', 'Working Minds',
+                'I worked in a service-based project to integrate Nokia\'s and Tim\'s Workflow, using: C#, NHibernate, .Net Framework, Polly, Nancy, StructureMap for IoC/DI, SQL Server, Quartz.Net for scheduled tasks and Git.'),
           ],
         ),
       ),
