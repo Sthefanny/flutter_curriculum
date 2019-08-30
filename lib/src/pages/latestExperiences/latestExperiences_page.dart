@@ -20,7 +20,7 @@ class _LatestExperiencesPageState extends State<LatestExperiencesPage> {
         child: ListView(
           children: <Widget>[
             buildCard('Full Stack / Flutter Developer', 'Fev/19 - Present', 'CEABS Serviços',
-                'Development of an airport management system using: .NET, C#, Web Api, Git, CI/CD, AngularJS (version 1.3 and 1.5), Javascript, HTML5, CSS.'),
+                'I added ReactJS into an application and maintained some old codes. Now I\'m developing a Flutter mobile application.'),
             buildCard('Full Stack Developer', 'Mar/17 - Fev/19', 'CINQ Technologies - Client: Sita (Ireland)',
                 'Development of an airport management system using: .NET, C#, Web Api, Git, CI/CD, AngularJS (version 1.3 and 1.5), Javascript, HTML5, CSS.'),
             buildCard('Full Stack Developer', 'Nov/16 - Mar/17', 'CINQ Technologies - Client: Fibra',

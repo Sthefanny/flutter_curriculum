@@ -18,8 +18,8 @@ class _EducationPageState extends State<EducationPage> {
         margin: EdgeInsets.all(10),
         child: ListView(
           children: <Widget>[
-            buildCard('Universidade Castelo Branco (UCB)', 'Rio de Janeiro - Brazil - Graduated December 2010', 'Bachelor\'s Degree, Information Technology'),
-            buildCard('Fisk', 'English Course - 8 years', 'Writing: Advanced\nReading: Advanced\nSpeaking: Advanced\n\nI lived 4 month in Ireland for work'),
+            buildCard('Bachelor\'s Degree, Information Technology', 'Universidade Castelo Branco (UCB)', 'Rio de Janeiro - Brazil - Graduated December 2010'),
+            buildCard('English Course', 'Fisk School - 8 years', 'Writing: Advanced\nReading: Advanced\nSpeaking: Advanced\n\nI lived 4 month in Ireland for work'),
           ],
         ),
       ),
@@ -37,7 +37,7 @@ class _EducationPageState extends State<EducationPage> {
               title,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 17.0,
+                fontSize: 16,
               ),
             ),
             Padding(

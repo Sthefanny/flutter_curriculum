@@ -22,35 +22,39 @@ class DrawerDefault {
     return Column(
       children: <Widget>[
         buildDrawerHeader(colors),
-        Container(margin: EdgeInsets.only(top: 10)),
-        GestureDetector(
+        InkWell(
           child: buildDrawerItem(Icons.wifi_tethering, 'Summary', colors),
           onTap: () {
-            Navigator.of(context, rootNavigator: true).pushReplacementNamed(PageRoutes.homeRoute);
+            Navigator.of(context).pop();
+            Navigator.of(context).pushReplacementNamed(PageRoutes.homeRoute);
           },
         ),
-        GestureDetector(
+        InkWell(
           child: buildDrawerItem(Icons.business_center, 'Latest Experiences', colors),
           onTap: () {
-            Navigator.of(context).popAndPushNamed(PageRoutes.latestExperiencesRoute);
+            Navigator.of(context).pop();
+            Navigator.of(context).pushReplacementNamed(PageRoutes.latestExperiencesRoute);
           },
         ),
-        GestureDetector(
+        InkWell(
           child: buildDrawerItem(Icons.gamepad, 'Skills', colors),
           onTap: () {
-            Navigator.of(context).popAndPushNamed(PageRoutes.skillsRoute);
+            Navigator.of(context).pop();
+            Navigator.of(context).pushReplacementNamed(PageRoutes.skillsRoute);
           },
         ),
-        GestureDetector(
+        InkWell(
           child: buildDrawerItem(Icons.school, 'Education', colors),
           onTap: () {
-            Navigator.of(context).popAndPushNamed(PageRoutes.educationRoute);
+            Navigator.of(context).pop();
+            Navigator.of(context).pushReplacementNamed(PageRoutes.educationRoute);
           },
         ),
-        GestureDetector(
+        InkWell(
           child: buildDrawerItem(Icons.flag, 'Languages', colors),
           onTap: () {
-            Navigator.of(context).popAndPushNamed(PageRoutes.languagesRoute);
+            Navigator.of(context).pop();
+            Navigator.of(context).pushReplacementNamed(PageRoutes.languagesRoute);
           },
         ),
       ],
@@ -76,7 +80,7 @@ class DrawerDefault {
 
   static Widget buildDrawerItem(IconData icon, String title, ColorsConfig colors) {
     return Container(
-      margin: EdgeInsets.only(left: 20, bottom: 20, right: 20),
+      margin: EdgeInsets.only(left: 20, bottom: 10, top: 10, right: 20),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[

@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         children: <Widget>[
           ListTile(
-            contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
             title: Text('Sthefanny Gonzaga', textAlign: TextAlign.center, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             subtitle: Column(
               children: <Widget>[
@@ -130,7 +130,7 @@ class _HomePageState extends State<HomePage> {
   _launchURL(String urlString) async {
     var url = 'https://$urlString';
     if (await canLaunch(url)) {
-      await launch(url);
+      await launch(url, forceWebView: false);
     } else {
       throw 'Could not launch $url';
     }
