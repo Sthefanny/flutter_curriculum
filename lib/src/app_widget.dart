@@ -15,6 +15,7 @@ class AppWidget extends StatelessWidget {
       ),
       initialRoute: PageRoutes.bottomNavbarRoute,
       onGenerateRoute: PageRoutes.routes,
+      debugShowCheckedModeBanner: false,
     );
   }
 }
