@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_curriculum/src/common/models/pageRoutes.dart';
 import 'package:flutter_curriculum/src/configs/colorsConfig.dart';
 import 'package:flutter_curriculum/src/pages/education/education_page.dart';
