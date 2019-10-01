@@ -1,6 +1,23 @@
-# flutter_curriculum
+# Flutter Curriculum
 
-A new Flutter project.
+A new Flutter project to study flutter, using [slidy library](https://github.com/Flutterando/slidy)
+
+## Android Screenshots
+
+![Android Summary](screenshots/Android_summary.png)
+![Android Drawer](screenshots/Android_drawer.png)
+![Android Latest Experiences](screenshots/Android_lat_xp.png)
+![Android Skills](screenshots/Android_skills.png)
+![Android Education](screenshots/Android_education.png)
+![Android Languages](screenshots/Android_languages.png)
+
+## iOS Screenshots
+
+![iOS Summary](screenshots/ios_summary.png)
+![iOS Latest Experiences](screenshots/ios_lat_xp.png)
+![iOS Skills](screenshots/ios_skills.png)
+![iOS Education](screenshots/ios_education.png)
+![iOS Languages](screenshots/ios_languages.png)
 
 ## Getting Started
 
