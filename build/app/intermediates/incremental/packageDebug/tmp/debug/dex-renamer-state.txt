@@ -1,4 +1,4 @@
-#Wed Sep 11 18:59:01 BRT 2019
-base.0=D\:\\Projects\\flutter_curriculum\\build\\app\\intermediates\\transforms\\dexMerger\\debug\\0
+#Tue Oct 01 08:02:42 BRT 2019
+base.0=/Users/t_blendit.sthefannyg/Documents/Projects/Estudo/Flutter Curriculum/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
